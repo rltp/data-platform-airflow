@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  terraform:
+  plan:
     runs-on: ubuntu-latest
     
     steps:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.7.0
+          terraform_version: 1.6.5
 
       - name: Terraform Init
         run: terraform init
@@ -47,7 +47,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.7.0 
+          terraform_version: 1.6.5
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan.out
